@@ -5,6 +5,8 @@
  */
 package midtermexam_versiona_extensioncode;
 
+import java.util.Arrays;
+
 /**
  * The user profile for the OnlineVids system. The user has a userID
  * and a favourite genre that must be one of the choices in the
@@ -18,7 +20,7 @@ public class UserProfile
     
     private String userID;//the userID
     private String genre;// the user's preferred genre of movie
-    private String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
+    private static String[] genres = {"Comedy", "Drama", "Action", "Mystery"};//available genres of movies
     
     /**
      * A constructor that takes in the userID and the favourite genre
@@ -30,6 +32,12 @@ public class UserProfile
         userID = givenID;
         genre= givenGenre;
     }
+
+    public static String[] getGenres(){
+        return genres;
+    }
+    
+    
 
     /**
      * A getter for the userID
@@ -59,6 +67,11 @@ public class UserProfile
      */
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" + "userID=" + userID + ", genre=" + genre + '}';
     }
     
     
